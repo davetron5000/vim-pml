@@ -17,32 +17,24 @@ snippet sec
 	<sect${1:1}>
 		<title>${2}</title>
 		<p>
-
 			${3}
-
 		</p>
 	</sect$1>
 snippet seci
 	<sect${1:1} id="${2}">
 		<title>${3}</title>
 		<p>
-
 			${4}
-
 		</p>
 	</sect$1>
 snippet p
 	<p>
-
 		${1}
-
 	</p>
 snippet footnote
 	<footnote>
 		<p>
-
 			${1}
-
 		</p>
 	</footnote>
 snippet epigraph
@@ -53,20 +45,14 @@ snippet epigraph
 		</epitext>
 	</epigraph>
 snippet bq
-	<blockquote>
-		<p>
-
-			${1}
-
-		</p>
-	</blockquote>
+	<blockquote><p>
+		${1}
+	</p></blockquote>
 snippet sb
 	<sidebar id="sb.${1}">
 		<title>${2}</title>
 		<p>
-
 			${3}
-
 		</p>
 	</sidebar>
 snippet joe
@@ -115,7 +101,7 @@ snippet elide
 	<elide>${1}</elide>${2}
 snippet lelide
 	<literal:elide>${1}</literal:elide>${2}
-snippet fname
+snippet file
 	<filename>${1:fileName}</filename>${2}
 snippet dir
 	<dir>${1:dir}</dir>${2}
@@ -133,7 +119,9 @@ snippet miss
 	<missing>${1:message}</missing>${2}
 snippet code
 	<code language="${1:lang}">
+		<![CDATA[
 		${2}
+		]]>
 	</code>
 snippet cfile
 	<code file="${1:filename}"/>${2}
