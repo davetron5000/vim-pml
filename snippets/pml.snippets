@@ -117,6 +117,8 @@ snippet lelide
 	<literal:elide>${1}</literal:elide>${2}
 snippet fname
 	<filename>${1:fileName}</filename>${2}
+snippet dir
+	<dir>${1:dir}</dir>${2}
 snippet frac
 	<fraction><whole>${1}</whole><top>${2}</top><bottom>${3}</bottom></fraction>${4}
 snippet pow
@@ -143,9 +145,17 @@ snippet ic
 	<inlinecode>${1:code}</inlinecode>${2}
 snippet cref
 	<cref linkend="${1}"/>${2}
+snippet com
+	<command>${1}</command>${2}
+snippet cop
+	<commandoption>${1}</commandoption>${2}
+snippet session
+	<code lang="session">
+		<![CDATA[
+		${1}
+		]]>
+	</code>${2}
 snippet li
-	<li>
-		<p>
-			${1}
-		</p>
-	</li>
+	<li><p>
+		${1}
+	</p></li>
