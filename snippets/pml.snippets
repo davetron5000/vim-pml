@@ -1,7 +1,7 @@
 snippet chapter
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!DOCTYPE chapter SYSTEM "local/xml/markup.dtd">
-	<chapter id="chp.${1:`substitute(Filename('', 'ChapterId'), '^.', '\u&', '')`}">
+	<chapter id="chapter.${1:`substitute(Filename('', 'ChapterId'), '^.', '\u&', '')`}">
 		<title>${2}</title>
 
 		<p>
@@ -21,7 +21,7 @@ snippet sec
 		</p>
 	</sect$1>
 snippet seci
-	<sect${1:1} id="${2}">
+	<sect${1:1} id="section.${2}">
 		<title>${3}</title>
 		<p>
 			${4}
@@ -31,6 +31,12 @@ snippet p
 	<p>
 		${1}
 	</p>
+snippet <foot
+	<footnote>
+		<p>
+			${1}
+		</p>
+	</footnote>
 snippet footnote
 	<footnote>
 		<p>
@@ -49,7 +55,7 @@ snippet bq
 		${1}
 	</p></blockquote>
 snippet sb
-	<sidebar id="sb.${1}">
+	<sidebar id="sidebar.${1}">
 		<title>${2}</title>
 		<p>
 			${3}
@@ -72,11 +78,13 @@ snippet hl
 
 		</p>
 	</higlight>
-snippet img
-	<figure id="fig.${1}">
+snippet figure
+	<figure id="figure.${1}">
 		<title>${2}</title>
-		<imagedata fileref="${3:imagePath}" align="${6:center}"/>
+		<imagedata fileref="images/${3:imagePath}" />
 	</figure>
+snippet image
+	<imagedata fileref="images/${1:imagePath}" />
 snippet var
 	<variable>${1:variableName}</variable>${2}
 snippet class
@@ -124,11 +132,11 @@ snippet code
 		]]>
 	</code>
 snippet cfile
-	<code file="${1:filename}"/>${2}
+	<code file="code/${1:filename}"/>${2}
 snippet cpart
-	<code file="${1:filename}" part="${2:partId}"/>${3}
+	<code file="code/${1:filename}" part="${2:partId}"/>${3}
 snippet cpat
-	<code file="${1:filename}" start="${2:startPattern} end="${3:endPattern}"/>${4}
+	<code file="code/${1:filename}" start="${2:startPattern} end="${3:endPattern}"/>${4}
 snippet ic
 	<inlinecode>${1:code}</inlinecode>${2}
 snippet cref
@@ -144,8 +152,38 @@ snippet session
 		<![CDATA[
 		${1}
 		]]>
-	</code>${2}
+	</code>
+snippet ol
+	<ol>
+	  <li><p>
+		  ${1}
+		</p></li>
+	</ol>
+snippet ul
+	<ul>
+	  <li><p>
+		  ${1}
+		</p></li>
+	</ul>
 snippet li
 	<li><p>
 		${1}
 	</p></li>
+snippet dl
+	<dl>
+	  <dt newline="no">${1}</dt>
+	  <dd><p>
+		  ${2}
+		</p></dd>
+	</dl>
+snippet dt
+	<dt newline="no">${1}</dt>
+	<dd><p>
+	  ${2}
+	</p></dd>
+snippet url
+	${2}<footnote><p><url>${1}</url></p></footnote>
+snippet table
+	<sqltable>${1}</sqltable>${2}
+snippet col
+	<sqlcolumn>${1}</sqlcolumn>${2}
